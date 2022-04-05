@@ -1,25 +1,8 @@
 # Copyright (c) 2022 ARM Limited. All rights reserved.
 # SPDX-License-Identifier: Apache-2.0
 
-cmake_minimum_required(VERSION 3.19.0)
+add_library(hexiwear_kw40z INTERFACE)
 
-set(MBED_PATH ${CMAKE_CURRENT_SOURCE_DIR}/mbed-os CACHE INTERNAL "")
-set(MBED_CONFIG_PATH ${CMAKE_CURRENT_BINARY_DIR} CACHE INTERNAL "")
-set(APP_TARGET hexiwear_kw40z)
+target_include_directories(hexiwear_kw40z INTERFACE .)
 
-include(${MBED_PATH}/tools/cmake/app.cmake)
-
-project(${APP_TARGET})
-
-add_subdirectory(${MBED_PATH})
-
-add_library(${APP_TARGET}
-    kw40z.cpp
-)
-
-target_link_libraries(${APP_TARGET} mbed-os)
-
-option(VERBOSE_BUILD "Have a verbose build process")
-if(VERBOSE_BUILD)
-    set(CMAKE_VERBOSE_MAKEFILE ON)
-endif()
+target_sources(hexiwear_kw40z INTERFACE kw40z.cpp)
