@@ -1,6 +1,0 @@
-.DS_Store
-.vscode/
-
-.mbedbuild
-cmake_build/
-mbed-os/

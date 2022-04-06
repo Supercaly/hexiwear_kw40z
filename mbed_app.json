@@ -1,9 +1,0 @@
-{
-    "target_overrides": {
-        "HEXIWEAR": {
-            "platform.stdio-baud-rate": 9600,
-            "platform.stdio-buffered-serial": 1,
-            "target.printf_lib": "std"
-        }
-    }
-}
